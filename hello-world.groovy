@@ -6,7 +6,7 @@ pipeline {
     		steps {
     			checkout([
     				$class: 'GitSCM',
-    				branches: [['refs/heads/master']],
+    				branches: [[name: 'refs/heads/master']],
     				extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'Test']],
     				userRemoteConfigs: [[url: 'https://github.com/sbuckle/jenkins-dsl-seedrepo.git']]
     			])
