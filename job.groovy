@@ -1,5 +1,8 @@
-job('hello-world') {
-    steps {
-        shell('echo Hello, world')
+pipelineJob('hello-world') {
+    definition {
+    	cps {
+    		script(readFileFromWorkspace('hello-world.groovy'))
+    		sandbox()
+    	}
     }
 }
